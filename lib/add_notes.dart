@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_notes/data/local/note_model.dart';
+import 'package:my_notes/utils/custom_widget.dart';
 import 'package:provider/provider.dart';
 
 import 'data/local/db_provider.dart';
@@ -105,24 +106,24 @@ class AddNotes extends StatelessWidget
                        controller: titleController,
                        decoration: InputDecoration(
                          hintText: "Title",
-                         hintStyle: TextStyle(fontSize: 30, color: Colors.grey.shade500),
+                         hintStyle: myTextStyle30(mColor: Colors.grey.shade500),
                          enabledBorder: InputBorder.none,
                          focusedBorder: InputBorder.none,
                          contentPadding: EdgeInsets.all(10),
                        ),
-                       style: TextStyle(fontSize: 30, color: Colors.white),
+                       style: myTextStyle30(mColor: Colors.white),
                        maxLines: null,
                      ),
                      TextField(
                        controller: descController,
                        decoration: InputDecoration(
                          hintText: "Type Something....",
-                         hintStyle: TextStyle(fontSize: 20, color: Colors.white),
+                         hintStyle: myTextStyle30(mColor: Colors.grey.shade500),
                          enabledBorder: InputBorder.none,
                          focusedBorder: InputBorder.none,
                          contentPadding: EdgeInsets.all(10),
                        ),
-                       style: TextStyle(fontSize: 20, color: Colors.white),
+                       style: myTextStyle30(mColor: Colors.white),
                        maxLines: null,
                      ),
                    ],

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:my_notes/add_notes.dart';
 import 'package:my_notes/data/local/note_model.dart';
+import 'package:my_notes/utils/custom_widget.dart';
 import 'package:provider/provider.dart';
 import 'data/local/db_provider.dart';
 
@@ -68,9 +69,9 @@ class _HomePageState extends State<HomePage>
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(allNotes[index].title,
-                                  style: TextStyle(fontSize: 25,color: Colors.black),),
+                                  style: myTextStyle25(mColor: Colors.black),),
                                 Text(allNotes[index].desc,maxLines: 2,
-                                  style: TextStyle(fontSize: 15,color: Colors.black),),
+                                  style: myTextStyle15(mColor: Colors.black),),
                               ],
                             ),
                           ),
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage>
               },
             ),
           ):
-          Center(child: Text("No Notes Found Yet",style: TextStyle(fontSize: 20,color: Colors.white70),));
+          Center(child: Text("No Notes Found Yet",style: myTextStyle20(mColor: Colors.white),));
         },),
         floatingActionButton: FloatingActionButton(onPressed: (){
           titleController.clear();
