@@ -23,9 +23,11 @@ class DbHelper
        return nDB!;
      }
    else{
-     nDB ??= await openDB();
+     nDB = await openDB();
     return nDB!;
    }
+   ///  nDB ??= await openDB();
+    ///     return nDB!;
   }
 
   Future<Database> openDB()
@@ -60,12 +62,12 @@ class DbHelper
   async{
       var nDB = await getDB();
       var data = await nDB.query(TABLE_NOTE);
-      List<NoteModel> mnotes = [];
+      List<NoteModel> mNotes = [];
       for(Map<String,dynamic> eachData in data)
         {
-           mnotes.add(NoteModel.fromMap(eachData));
+           mNotes.add(NoteModel.fromMap(eachData));
         }
-      return mnotes;
+      return mNotes;
 
   }
 
